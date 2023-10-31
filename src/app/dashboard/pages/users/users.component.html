@@ -1,0 +1,18 @@
+ <h1 fontWeight="bolder" appHeadline>Usuarios</h1>
+
+<div class="d-flex justify-content-end mb-3">
+<button (click)="openUsersDialog()" mat-flat-button color='accent'>
+    <mat-icon>person_add</mat-icon>
+    Agregar Usuario
+</button>
+</div>
+
+<!-- {{ testUser | fullname: true: 11: 'argumento' }} -->
+
+<app-users-table [dataSource]="users"
+(editUser)="onEditUser($event)"
+(deleteUser)="onDeleteUser($event)">
+</app-users-table>
+
+<!-- <router-outlet></router-outlet> -->
+

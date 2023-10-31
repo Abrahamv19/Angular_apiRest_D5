@@ -1,0 +1,71 @@
+<!-- CONTENEDOR -->
+<mat-drawer-container class="example-container" autosize>
+
+  <!-- SiDEBAR -->
+  <mat-drawer 
+  style="width: 200px"
+  [opened]="showSidebar"
+  #drawer
+  class="example-sidenav" 
+  mode="side" 
+  position="start"
+  >
+   <app-sidebar></app-sidebar> 
+
+  </mat-drawer>
+  <!-- SiDEBAR -->
+  
+    <!-- CONTENIDO -->
+    <div class="example-sidenav-content">
+
+   <!-- TOOLBAR -->
+   <app-toolbar (toggleSidebar)="showSidebar = !showSidebar"></app-toolbar>
+   <!-- TOOLBAR -->
+
+        <!-- PAGINA FORM -->
+        <main style="padding: 1rem;">
+         
+          <!-- <app-forms></app-forms> -->
+          <!-- <app-users></app-users> -->
+          <!-- <app-home></app-home> -->
+          <router-outlet></router-outlet>
+          
+        </main>
+        <!-- PAGINA FORM -->
+
+        <!-- CARD -->
+        <!-- ICON -->
+        <!-- <mat-icon style="font-size: 40px; height: 40px; width: 40px;">
+          person_add
+        </mat-icon> -->
+        <!-- <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>Shiba Inu</mat-card-title>
+              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p>
+                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                bred for hunting.
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-stroked-button color="accent">LIKE</button>
+              <button mat-stroked-button color="warn">SHARE</button>
+            </mat-card-actions>
+          </mat-card> -->
+        <!-- CARD -->
+          
+
+      <!-- <button type="button" mat-stroked-button color="warn">
+        Toggle sidenav
+      </button> -->
+    </div>
+
+    <!-- CONTENIDO -->
+  
+  </mat-drawer-container>
+  
