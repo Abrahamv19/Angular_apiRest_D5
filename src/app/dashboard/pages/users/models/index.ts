@@ -3,8 +3,8 @@ export interface User {
     name: string;
     lastName: string;
     email: string;
-    course: string;
-    classYear: string;
+    // course: string;
+    // classYear: string;
 }
 
 

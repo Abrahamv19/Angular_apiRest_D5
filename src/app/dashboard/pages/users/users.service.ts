@@ -15,16 +15,12 @@ export class UsersService {
         name: 'John',
         lastName: 'Tevez',
         email: 'john@gmail.com',
-        course: 'Vue',
-        classYear: '1'
       },
       {
         id: 2,
         name: 'Valeria',
         lastName: 'Eder',
         email: 'Valeria@gmail.com',
-        course: 'Angular',
-        classYear: '4'
       },
     ];
   }

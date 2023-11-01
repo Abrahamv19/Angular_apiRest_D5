@@ -8,49 +8,28 @@ import { UserDetailComponent } from './dashboard/pages/users/components/user-det
 import { CoursesComponent } from './dashboard/pages/courses/courses.component';
 import { StudentsComponent } from './dashboard/pages/students/students.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
+import { dashboardGuard } from './core/guards/dashboard.guard';
 
 const routes: Routes = [
   {
+    // lazy loading para cargar rutas hijas bajo demanda
     path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'courses',
-        component: CoursesComponent,
-      },
-      {
-        path: 'users',
-        component: UsersComponent,
-      },
-      {
-        path: 'students',
-        component: StudentsComponent,
-      },
-      {
-        path: 'enrollments',
-        component: EnrollmentsComponent,
-      },
-      {
-        path: 'users/detail/:id',
-        component: UserDetailComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'home',
-      },
-    ]
+    canActivate: [
+      dashboardGuard,
+    ],
+    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
   {
     path: 'auth',
-    component: AuthComponent,
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
+  // {
+  //   path: 'auth',
+  //   component: AuthComponent,
+  // },
   {
     path: '**',
-    redirectTo: 'auth',
+    redirectTo: 'auth/login',
   },
 ];
 

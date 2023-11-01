@@ -6,6 +6,7 @@ import { UsersDialogComponent } from './components/users-dialog/users-dialog.com
 import { UsersTableComponent } from './components/users-table/users-table.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
+import { UsersRoutingModule } from './users-routing.module';
 
 
 
@@ -19,7 +20,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule
+    UsersRoutingModule,
   ],
   exports: [
     UsersComponent
