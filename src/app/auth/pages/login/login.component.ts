@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,16 +9,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private authservice: AuthService, private router: Router) {}
+
+  emailControl = new FormControl(null, [Validators.required, Validators.email]);
+  passwordControl = new FormControl(null, [Validators.required]);
+
+  loginForm = new FormGroup({
+    email: this.emailControl,
+    password: this.passwordControl,
+  })
+  constructor(private authservice: AuthService, private router: Router) { }
 
   login(): void {
-    this.authservice.login().subscribe({
-      next: (authuser) => {
-        if(!!authuser){
-          this.router.navigate(['/dashboard'])
 
-        }
-      },
-    });
+    if (this.loginForm.invalid) {
+      this.loginForm.markAllAsTouched();
+    } else { 
+      this.authservice.login(this.loginForm.getRawValue());
+    }
   }
 }

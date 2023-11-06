@@ -1,10 +1,8 @@
-export interface User {
+export interface Student {
     id: number;
     name: string;
     lastName: string;
     email: string;
-    token: string;
-    role: string;
+    course: string;
+    
 }
-
-

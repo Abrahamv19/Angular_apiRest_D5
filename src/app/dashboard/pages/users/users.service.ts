@@ -10,18 +10,18 @@ export class UsersService {
 
   getUsers(): User[] {
     return [
-      {
-        id: 1,
-        name: 'John',
-        lastName: 'Tevez',
-        email: 'john@gmail.com',
-      },
-      {
-        id: 2,
-        name: 'Valeria',
-        lastName: 'Eder',
-        email: 'Valeria@gmail.com',
-      },
+      // {
+      //   id: 1,
+      //   name: 'John',
+      //   lastName: 'Tevez',
+      //   email: 'john@gmail.com',
+      // },
+      // {
+      //   id: 2,
+      //   name: 'Valeria',
+      //   lastName: 'Eder',
+      //   email: 'Valeria@gmail.com',
+      // },
     ];
   }
 }

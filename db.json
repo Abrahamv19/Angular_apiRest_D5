@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "name": "admin",
+      "lastName": "admin",
+      "email": "admin@g.com",
+      "password": "123",
+      "token": "asdfgh",
+      "role": "admin",
+      "id": 1
+    }
+  ],
+  "courses": [],
+  "students": []
+}

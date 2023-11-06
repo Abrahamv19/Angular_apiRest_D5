@@ -1,1 +1,16 @@
-<p>students works!!!!</p>
+<h1>Estudiantes</h1>
+
+<div class="d-flex justify-content-end mb-3">
+    <button (click)="addStudent()" mat-flat-button color="accent">
+      <mat-icon>add</mat-icon>
+      Agregar estudiante
+    </button>
+  </div>
+  
+  <app-students-table
+    [dataSource]="(students$ | async) || []"
+    (deleteStudent)="onDeleteStudent($event)"
+    (editStudent)="onEditStudent($event)"
+  ></app-students-table>
+
+

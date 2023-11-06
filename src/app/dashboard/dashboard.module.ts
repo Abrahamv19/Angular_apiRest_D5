@@ -6,13 +6,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule} from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { UsersModule } from './pages/users/users.module';
 import { SharedModule } from '../shared/shared.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
-import { HomeModule } from './pages/home/home.module';
-import { CoursesModule } from './pages/courses/courses.module';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
@@ -31,11 +28,8 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
-    // UsersModule,
-    // CoursesModule,
     SharedModule,
     MatListModule,
-    // HomeModule,
     DashboardRoutingModule
 
   ],
